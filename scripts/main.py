@@ -13,9 +13,9 @@ planeId = p.loadURDF("plane.urdf")
 num_cylinders_per_color = 3  # This will create three of each color
 
 # Paths to individual URDFs repeated for each color
-cylinders = ["red_cylinder.urdf"] * num_cylinders_per_color + \
-            ["orange_cylinder.urdf"] * num_cylinders_per_color + \
-            ["green_cylinder.urdf"] * num_cylinders_per_color
+cylinders = ["/urdf/red_cylinder.urdf"] * num_cylinders_per_color + \
+            ["/urdf/orange_cylinder.urdf"] * num_cylinders_per_color + \
+            ["/urdf/green_cylinder.urdf"] * num_cylinders_per_color
 
 # Generate random positions for each cylinder
 positions = [[random.uniform(-5, 5), random.uniform(-5, 5), 3] for _ in range(len(cylinders))]

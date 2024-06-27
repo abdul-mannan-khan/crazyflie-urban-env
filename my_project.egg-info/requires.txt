@@ -1,5 +1,0 @@
-gymnasium
-stable-baselines3
-numpy
-pybullet
-gym-pybullet-drones

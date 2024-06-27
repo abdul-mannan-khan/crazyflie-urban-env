@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<robot name="detailed_construction_site">
+
+  <!-- Ground Plane -->
+  <link name="ground">
+    <visual>
+      <geometry>
+        <box size="20 20 0.1"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="20 20 0.1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+  </link>
+
+  <!-- Construction Barrier 1 -->
+  <link name="barrier1">
+    <visual>
+      <geometry>
+        <box size="2 0.1 1"/>
+      </geometry>
+      <material name="yellow">
+        <color rgba="1 1 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="2 0.1 1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+  </link>
+  <joint name="barrier1_joint" type="fixed">
+    <parent link="ground"/>
+    <child link="barrier1"/>
+    <origin xyz="0 3 0.55" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Construction Barrier 2 -->
+  <link name="barrier2">
+    <visual>
+      <geometry>
+        <box size="2 0.1 1"/>
+      </geometry>
+      <material name="yellow">
+        <color rgba="1 1 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="2 0.1 1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+  </link>
+  <joint name="barrier2_joint" type="fixed">
+    <parent link="ground"/>
+    <child link="barrier2"/>
+    <origin xyz="0 -3 0.55" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Construction Cone 1 -->
+  <link name="cone1">
+    <visual>
+      <geometry>
+        <cylinder radius="0.2" length="0.5"/>
+      </geometry>
+      <material name="orange">
+        <color rgba="1 0.5 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.2" length="0.5"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+  </link>
+  <joint name="cone1_joint" type="fixed">
+    <parent link="ground"/>
+    <child link="cone1"/>
+    <origin xyz="2 2 0.25" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Construction Cone 2 -->
+  <link name="cone2">
+    <visual>
+      <geometry>
+        <cylinder radius="0.2" length="0.5"/>
+      </geometry>
+      <material name="orange">
+        <color rgba="1 0.5 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.2" length="0.5"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+  </link>
+  <joint name="cone2_joint" type="fixed">
+    <parent link="ground"/>
+    <child link="cone2"/>
+    <origin xyz="2 -2 0.25" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Crane Base -->
+  <link name="crane_base">
+    <visual>
+      <geometry>
+        <box size="1 1 0.5"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 1 0.5"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+  </link>
+  <joint name="crane_base_joint" type="fixed">
+    <parent link="ground"/>
+    <child link="crane_base"/>
+    <origin xyz="-3 0 0.25" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Crane Arm -->
+  <link name="crane_arm">
+    <visual>
+      <geometry>
+        <box size="0.2 3 0.2"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.2 3 0.2"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+  </link>
+  <joint name="crane_arm_joint" type="fixed">
+    <parent link="crane_base"/>
+    <child link="crane_arm"/>
+    <origin xyz="0 1.5 0.25" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Stack of Bricks -->
+  <link name="bricks">
+    <visual>
+      <geometry>
+        <box size="1 1 1"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 1 1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+  </link>
+  <joint name="bricks_joint" type="fixed">
+    <parent link="ground"/>
+    <child link="bricks"/>
+    <origin xyz="0 0 0.5" rpy="0 0 0"/>
+  </joint>
+
+</robot>

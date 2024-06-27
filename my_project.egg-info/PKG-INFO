@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: my-project
+Version: 0.1
+Requires-Dist: gymnasium
+Requires-Dist: stable-baselines3
+Requires-Dist: numpy
+Requires-Dist: pybullet
+Requires-Dist: gym-pybullet-drones

@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<robot name="city_with_flying_zones">
+<!-- Ground Link 
+  <link name="ground">
+    <visual>
+      <geometry>
+        <box size="100 100 1"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="100 100 1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1000"/>
+      <inertia ixx="1000" ixy="0" ixz="0" iyy="1000" iyz="0" izz="1000"/>
+    </inertial>
+  </link>
+   --> 
+  <!-- Cylindrical Buildings Configuration -->
+  <!-- Red Buildings -->
+  <!-- Building Red 1 -->
+  <link name="building_red1">
+    <visual>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="10" ixy="0" ixz="0" iyy="10" iyz="0" izz="10"/>
+    </inertial>
+  </link>
+  <joint name="joint_red1" type="fixed">
+    <parent link="ground"/>
+    <child link="building_red1"/>
+    <origin xyz="5 15 15" rpy="0 0 0"/> <!-- Base at ground level -->
+  </joint>
+
+  <link name="building_red2">
+    <visual>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="10" ixy="0" ixz="0" iyy="10" iyz="0" izz="10"/>
+    </inertial>
+  </link>
+  <joint name="joint_red2" type="fixed">
+    <parent link="ground"/>
+    <child link="building_red2"/>
+    <origin xyz="-10 20 15" rpy="0 0 0"/> <!-- Base at ground level -->
+  </joint>
+
+  <link name="building_red3">
+    <visual>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="10" ixy="0" ixz="0" iyy="10" iyz="0" izz="10"/>
+    </inertial>
+  </link>
+  <joint name="joint_red3" type="fixed">
+    <parent link="ground"/>
+    <child link="building_red3"/>
+    <origin xyz="20 -5 15" rpy="0 0 0"/> <!-- Base at ground level -->
+  </joint>
+
+  <!-- Orange Buildings -->
+  <!-- Additional buildings in orange and green with similar configuration -->
+  <link name="building_orange1">
+    <visual>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+      <material name="orange">
+        <color rgba="1 0.647 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="10" ixy="0" ixz="0" iyy="10" iyz="0" izz="10"/>
+    </inertial>
+  </link>
+  <joint name="joint_orange1" type="fixed">
+    <parent link="ground"/>
+    <child link="building_orange1"/>
+    <origin xyz="15 -10 15" rpy="0 0 0"/> <!-- Base at ground level -->
+  </joint>
+
+  <link name="building_orange2">
+    <visual>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+      <material name="orange">
+        <color rgba="1 0.647 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="10" ixy="0" ixz="0" iyy="10" iyz="0" izz="10"/>
+    </inertial>
+  </link>
+  <joint name="joint_orange2" type="fixed">
+    <parent link="ground"/>
+    <child link="building_orange2"/>
+    <origin xyz="30 -10 15" rpy="0 0 0"/> <!-- Base at ground level -->
+  </joint>   
+
+  <link name="building_orange3">
+    <visual>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+      <material name="orange">
+        <color rgba="1 0.647 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="10" ixy="0" ixz="0" iyy="10" iyz="0" izz="10"/>
+    </inertial>
+  </link>
+  <joint name="joint_orange3" type="fixed">
+    <parent link="ground"/>
+    <child link="building_orange3"/>
+    <origin xyz="15 12 15" rpy="0 0 0"/> <!-- Base at ground level -->
+  </joint>  
+
+
+<link name="building_green1">
+    <visual>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="10" ixy="0" ixz="0" iyy="10" iyz="0" izz="10"/>
+    </inertial>
+  </link>
+  <joint name="joint_green1" type="fixed">
+    <parent link="ground"/>
+    <child link="building_green1"/>
+    <origin xyz="-15 5 15" rpy="0 0 0"/> <!-- Base at ground level -->
+  </joint>
+
+  <link name="building_green2">
+    <visual>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="10" ixy="0" ixz="0" iyy="10" iyz="0" izz="10"/>
+    </inertial>
+  </link>
+  <joint name="joint_green2" type="fixed">
+    <parent link="ground"/>
+    <child link="building_green2"/>
+    <origin xyz="25 15 15" rpy="0 0 0"/> <!-- Base at ground level -->
+  </joint>
+
+  <link name="building_green3">
+    <visual>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="2" length="30"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="10" ixy="0" ixz="0" iyy="10" iyz="0" izz="10"/>
+    </inertial>
+  </link>
+  <joint name="joint_green3" type="fixed">
+    <parent link="ground"/>
+    <child link="building_green3"/>
+    <origin xyz="-20 -20 15" rpy="0 0 0"/> <!-- Base at ground level -->
+  </joint>
+
+
+</robot>
